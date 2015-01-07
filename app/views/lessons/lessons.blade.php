@@ -6,7 +6,7 @@
     <div class="full-center lesson-block-inner" style="background: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(//s3.amazonaws.com/laracasts/images/video-thumbnails/laravel-5-fundamentals-series-tn.jpg); background: -moz-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(//s3.amazonaws.com/laracasts/images/video-thumbnails/laravel-5-fundamentals-series-tn.jpg); background: linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(//s3.amazonaws.com/laracasts/images/video-thumbnails/laravel-5-fundamentals-series-tn.jpg); background-size: cover;">
         
         <div class="lesson-block-thumbnail">
-            <i class="lesson-thumbnail icon-bookmark-1"></i>
+            <i class="fa fa-html5"></i>
         </div>
 
         <!-- <div class="lesson-block-details"> -->

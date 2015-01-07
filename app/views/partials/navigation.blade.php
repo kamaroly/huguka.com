@@ -12,9 +12,9 @@
 
       </div>
     <div class="navbar-header">
-             <a class="navbar-brand" href="/">
+      <a class="navbar-brand" href="/">
         <div class="logo">
-         <img src="{{Url()}}/images/logo.png">
+         <i class="fa fa-h-square pull-left"></i><span class="pull-right">Huguka</span>
         </div>    
       </a>
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" style="color:#fff">
@@ -39,13 +39,13 @@
       </li>
       <li>
         <a href="javascript:void(0)" onclick="showSearchForm(this)">
-            <i class="icon-search icon-2x"></i>
+            <i class="fa fa-tags"></i>
             Ibyiciro
         </a>
       </li>
       <li>
         <a href="javascript:void(0)" onclick="showSearchForm(this)">
-            <i class="icon-search icon-2x"></i>
+            <i class="fa fa-wechat"></i>
             Ungurana ibitekerezo
         </a>
       </li>
