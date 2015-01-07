@@ -12,15 +12,18 @@
 
       </div>
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">
-        <div class="logo">
-         <i class="fa fa-h-square pull-left"></i><span class="pull-right">Huguka</span>
-        </div>    
-      </a>
+    
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" style="color:#fff">
       <span class="fa fa-bars"></span>
     </button>
-
+    <ul class="nav navbar-nav navbar-left"> 
+     <li >
+        <a href="/" style="color:#ff9500;font-weight:900;font-size:24px;">
+            <i class="fa fa-h-square"></i>
+            huguka
+        </a>
+      </li>
+</ul>
   </div>
 
 
