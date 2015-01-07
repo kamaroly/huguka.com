@@ -30,7 +30,7 @@
     </ul>
 
      
-    <ul class="nav navbar-nav navbar-right"> 
+    <ul class="nav navbar-nav navbar-left"> 
      <li>
         <a href="javascript:void(0)" onclick="showSearchForm(this)">
             <i class="fa fa-book"></i>
@@ -40,21 +40,23 @@
       <li>
         <a href="javascript:void(0)" onclick="showSearchForm(this)">
             <i class="icon-search icon-2x"></i>
-            Ama Series
+            Ibyiciro
         </a>
       </li>
       <li>
         <a href="javascript:void(0)" onclick="showSearchForm(this)">
             <i class="icon-search icon-2x"></i>
-            Ibiganiro
+            Ungurana ibitekerezo
         </a>
       </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
       @if (Sentry::check())
         <li {{ (Request::is('users/show/' . Session::get('userId')) ? 'class="active"' : '') }}><a href="{{ URL::route('users.show', Session::get('userId')) }}">{{ Session::get('email') }}</a></li>
         <li><a href="{{ URL::route('Sentinel\logout') }}">Logout</a></li>
         @else
-        <li {{ (Request::is('login') ? 'class="active"' : '') }}><a href="{{ URL::route('Sentinel\login') }}">Login</a></li>
-        <li {{ (Request::is('users/create') ? 'class="active"' : '') }}><a href="{{ URL::route('Sentinel\register') }}">Register</a></li>
+        <li {{ (Request::is('login') ? 'class="active"' : '') }}><a href="{{ URL::route('Sentinel\login') }}">Injira</a></li>
+        <li {{ (Request::is('users/create') ? 'class="active"' : '') }} ><a href="{{ URL::route('Sentinel\register') }}" class="btn btn-finish btn-fill btn-warning btn-wd btn-sm">Iyandikishe</a></li>
         @endif
     </ul>
     

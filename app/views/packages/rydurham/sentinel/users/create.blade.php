@@ -76,7 +76,7 @@ Register
                         
                         <div class="wizard-footer">
                                 <div class="pull-right">
-                                      <a href="#"> Injira</a>
+                                      <a href="/login"> Injira</a>
                                     <input type='submit' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Emeza' />
                                 
         

@@ -13,10 +13,38 @@
 
 Route::get('/',['as'	=>'home', function()
 {
-	return View::make('partials.register');
+	return View::make('partials.home');
 }]);
 
-Route::get('url',function()
-	{
-		return Request::segment(1);
+////////////////////
+// Lessons routes //
+////////////////////
+
+Route::group(['prefix'	=>	'lessons'],function(){
+
+    // Get all lessons
+    Route::get('/',function(){
+
+    	$lesson 	= Lesson::find(1);
+    	return $lesson->tags;
+    });
+
+	// Show a lesson
+	Route::get('/{lesson_slug}',function($lesson_slug){
+		return $lesson_slug;
 	});
+});
+
+//////////////////
+// Tags routes  //
+//////////////////
+
+Route::group(['prefix'	=>	'tags'],function(){
+
+	//Get all tags
+	Route::get('/',function(){
+
+		$tag 	= 	Tag::find(2);
+		return $tag->lessons;
+	});
+});

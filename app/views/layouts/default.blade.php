@@ -28,14 +28,19 @@
        @yield('content')
     </div> <!--  big container -->
 
-     <div class="footer">
+     <div class="footer"> 
       <div class="container">
-             Huguka.com .</a>
       </div>
     </div>
 
 </div>
 
+<div class="container wrap">
+    @yield('belowbanner')
+</div>
+@include('partials.buyme')
+
+@include('partials.footer')
 </body>
 
     <script src="{{Url()}}/js/jquery-1.10.2.js" type="text/javascript"></script>
