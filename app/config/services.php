@@ -14,18 +14,10 @@ return array(
 	|
 	*/
 
-	'mailgun' => array(
-		'domain' => '',
-		'secret' => '',
-	),
-
 	'mandrill' => array(
-		'secret' => '',
+		'secret' => 'MDHB4hHTdHr4oFW2VrnW4Q',
 	),
 
-	'stripe' => array(
-		'model'  => 'User',
-		'secret' => '',
-	),
+
 
 );

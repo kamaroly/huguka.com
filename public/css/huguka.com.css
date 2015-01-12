@@ -245,6 +245,9 @@ h1 .subtitle{
    background-color: #FF9500;
    border-color: #FF9500;
 }
+.btn-warning.btn-fill:hover{
+    color: #eaeaea;
+}
 .btn-danger.btn-fill{
     background-color: #FF3B30;
     border-color: #FF3B30;
@@ -1186,7 +1189,7 @@ color: #fff;
 font-weight: bold;
 }
 .lesson-block-excerpt {
-color: #8e8e8e;
+color: #95959;
 font-size: 11.5px;
 }
 .lesson-block-excerpt p{
@@ -1213,6 +1216,14 @@ position: relative;
 line-height: 1em;
 top: 20px;
 text-shadow: 0 0 50px rgba(0,0,0,0.3);
+}
+
+.lesson-block-inner{
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(); background: -moz-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(); background: linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(); background-size: cover;
+}
+
+small, .small{
+    color:#ccc;
 }
 /*OTHER STYLES*/
 
@@ -1289,3 +1300,65 @@ text-align: -webkit-match-parent;
 margin: 0 !important;
 padding: 0 !important;
 }
+/*jumpstart CSS style */
+.jumbotron {
+background: #eaeaea;
+/*border-bottom: 1px solid #181818;*/
+color: #fff;
+padding: 6px 0;
+margin-bottom: 6px;
+}
+.jumbotron__heading {
+font-weight: bold;
+margin: 0;
+line-height: 1em;
+line-height: 1.2em;
+padding-right: 220px;
+color: #FF9500;
+letter-spacing: -1px;
+font-size: 1em;
+}
+.jumbotron__sub-heading {
+margin-top: 0;
+margin-bottom: 0;
+font-size: 1.4em;
+}
+
+/*End of jumpstart CSS STYLES*/
+
+ /*Watch lesson section */
+.video-sidebar__buttons {
+background: #fff;
+border: 1px solid #e3e3e3;
+border-radius: 4px;
+padding: 0;
+list-style: none;
+margin-bottom: 22px;
+position: relative;
+}
+.col-md-3 {
+width: 25%;
+}
+.video-sidebar__buttons>li form {
+display: block;
+}
+.video-sidebar__buttons>li *[class*="icon"] {
+color: #A7B3C2;
+width: 100%;
+text-align: left;
+display: block;
+font-size: 1.2em;
+position: relative;
+padding: 12px 14px 0;
+top: -3px;
+}
+.video-sidebar__buttons>li *[class*="icon"] span {
+padding-left: 10px;
+font-weight: bold;
+font-size: 0.83em;
+position: relative;
+top: -4px;
+}
+
+
+

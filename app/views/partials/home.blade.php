@@ -3,7 +3,7 @@
 {{-- Web site Title --}}
 @section('title')
 @parent
-home-banner
+Amasomo asobanutse ajyanye n'igihe.
 @stop
 
 {{-- Content --}}

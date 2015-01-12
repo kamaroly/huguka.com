@@ -6,10 +6,14 @@
 	<title>@yield('title')</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width" />
+  <link href="{{ Url() }}/css/jquery-ui.css" rel="stylesheet">
   <link href="{{ Url()}}/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="{{ Url()}}/css/huguka.com.css" rel="stylesheet" />  
-    <link href="{{ Url()}}/css/font-awesome.css" rel="stylesheet">
+  <link href="{{ Url()}}/css/font-awesome.css" rel="stylesheet">
+  <script src="{{Url()}}/js/jquery-1.10.2.js" type="text/javascript"></script>
+  <script src="{{Url()}}/js/jquery-ui.js"></script>
+
 </head>
 
 <body>
@@ -17,7 +21,6 @@
 <div class="image-container" style="{{(Request::segment(1)=='' || Request::segment(1)=='home')?
 'background-image: url('.Url().'/images/wizard.jpg)':'background-color:rgb(231,231,231)'}}">
    @include('partials.navigation')
-
     <!--   Big container   -->
     <div class="container">
       <div class="row">
@@ -38,12 +41,15 @@
 <div class="container wrap">
     @yield('belowbanner')
 </div>
+
+@if(Request::segment(1)=='' || Request::segment(1)=='home')
 @include('partials.buyme')
+@endif
 
 @include('partials.footer')
+
 </body>
 
-    <script src="{{Url()}}/js/jquery-1.10.2.js" type="text/javascript"></script>
 	<script src="{{Url()}}/js/bootstrap.min.js" type="text/javascript"></script>
 		
 	<!--   plugins 	 -->

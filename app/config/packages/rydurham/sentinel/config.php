@@ -85,11 +85,11 @@ return array(
     |
     */
 
-    'welcome'           => 'Account Registration Confirmation',
+    'welcome'           => 'Urakaza neza kuri huguka',
 
-    'reset_password'    => 'Password Reset Confirmation',
+    'reset_password'    => 'Emeza guhindura ijambo banga',
 
-    'new_password'      => 'New Password Information',
+    'new_password'      => 'Amakuru y\' ijambo banga',
 
 
     /*
@@ -128,7 +128,7 @@ return array(
     |
     */
 
-    'activation' => true,
+    'activation' => false,
 
     /*
     |--------------------------------------------------------------------------

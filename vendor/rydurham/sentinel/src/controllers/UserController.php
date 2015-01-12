@@ -47,11 +47,9 @@ class UserController extends BaseController {
 		$this->beforeFilter('Sentinel\csrf', array('on' => array('post', 'put', 'delete')));
 
 		// Set up Auth Filters
-		$this->beforeFilter('Sentinel\auth', array('only' => array('change')));
-		$this->beforeFilter('Sentinel\hasAccess:admin', array('only' => array('show', 'index', 'create', 'add', 'destroy', 'suspend', 'unsuspend', 'ban', 'unban')));
-		//array('except' => array('create', 'store', 'activate', 'resend', 'forgot', 'reset')));
+		$this->beforeFilter('Sentinel\auth', array('only' => array('show', 'edit', 'update', 'change' )));
+		$this->beforeFilter('Sentinel\hasAccess:admin', array('only' => array( 'index', 'create', 'add', 'destroy', 'suspend', 'unsuspend', 'ban', 'unban')));
 	}
-
 
 	/**
 	 * Display a listing of the resource.
@@ -103,12 +101,13 @@ class UserController extends BaseController {
             Session::flash('success', $result['message']);
             return Redirect::route(Config::get('Sentinel::config.post_confirmation_sent', 'home'));
 
-        } else {
+        } 
+
             Session::flash('error', $result['message']);
             return Redirect::route('Sentinel\register')
                 ->withInput()
                 ->withErrors( $this->registerForm->errors() );
-        }
+        
 	}
 
     /**
@@ -173,14 +172,12 @@ class UserController extends BaseController {
 	 */
 	public function show($id)
 	{
-        $user = $this->user->byId($id);
-
-        if($user == null || !is_numeric($id))
-        {
-            // @codeCoverageIgnoreStart
-            return \App::abort(404);
-            // @codeCoverageIgnoreEnd
+        $isOwner = $this->profileOwner($id);
+        if($isOwner !== true){
+            return $isOwner;
         }
+
+        $user = $this->user->byId($id);
 
         return View::make('Sentinel::users.show')->with('user', $user);
 	}
@@ -194,6 +191,7 @@ class UserController extends BaseController {
 	public function edit($id)
 	{
         $isOwner = $this->profileOwner($id);
+
         if($isOwner !== true){
             return $isOwner;
         }
@@ -472,12 +470,12 @@ class UserController extends BaseController {
 	*/
 	protected function profileOwner($id)
 	{
-	$user = \Sentry::getUser();
-	if ($id != Session::get('userId') && (!$user->hasAccess('admin'))) {
-		Session::flash('error', trans('Sentinel::users.noaccess'));
-		return Redirect::route(Config::get('Sentinel::config.post_login'));
-	}
-	return true;
+        $user = \Sentry::getUser();
+        if ($id != Session::get('userId') && (!$user->hasAccess('admin'))) {
+            Session::flash('error', trans('Sentinel::users.noaccess'));
+            return Redirect::route(Config::get('Sentinel::config.post_login'));
+        }
+        return true;
 	}
 
 }

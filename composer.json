@@ -8,7 +8,8 @@
 		"laravel/framework": "4.2.*",
 		"laracasts/flash": "~1.0",
 		"way/generators": "~2.0",
-		"rydurham/sentinel": "~1.4"
+		"rydurham/sentinel": "~1.4",
+		"guzzlehttp/guzzle": "4.*"
 	},
 	"autoload": {
 		"classmap": [

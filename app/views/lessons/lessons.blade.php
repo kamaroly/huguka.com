@@ -2,96 +2,42 @@
 <span class="section-heading-divider"></span>
 
 <div class="row lesson-set lessons__row">
+ 
+ @foreach($lessons as $lesson)
+    <article class="lesson-block col-md-4">
 
-   <article class="col-md-4 lesson-block lesson-block-series lesson-19 ">
-      <div class="full-center lesson-block-inner" style="background: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(//s3.amazonaws.com/laracasts/images/video-thumbnails/laravel-5-fundamentals-series-tn.jpg); background: -moz-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(//s3.amazonaws.com/laracasts/images/video-thumbnails/laravel-5-fundamentals-series-tn.jpg); background: linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(//s3.amazonaws.com/laracasts/images/video-thumbnails/laravel-5-fundamentals-series-tn.jpg); background-size: cover;">
-            
+        <div class="full-center lesson-block-inner">       
+        
             <div class="lesson-block-thumbnail">
-                <i class="fa fa-html5"></i>
+                <i class="{{ $lesson->thumbnail }}"></i>
             </div>
-            <h5 class="lesson-block-difficulty">Biroroshye</h5>
+        
+            <h5 class="lesson-block-difficulty">{{ $lesson->difficulity}}</h5>
            
             <h3 class="lesson-block-title  not-watched">
-                <a href="{{Url()}}/lessons/intangiriro-ya-html" title="Intangiriro ya html">
-                    Intangiriro ya HTML
+                <a href="{{Url()}}/lessons/{{$lesson->slug}}" title="{{ $lesson->title }}">
+                    {{ $lesson->title}}
                 </a>                  
             </h3>
-            <small class="lesson-block-length">
-                9:00       
+         
+             <small class="lesson-block-length">
+                {{ $lesson->length }}   
              </small>
         </div>
 
         <div class="lesson-block-meta">
-            <div class="lesson-date">
-                Jan. 5th 2015       
+             <div class="lesson-date">
+                {{ date('d-M-Y',strtotime($lesson->update_at))}}      
              </div>   
-            <!-- This displays the favorited form and heart icon thing -->
         </div>
 
         <div class="lesson-block-excerpt">
-            <p>Uraho? Nitwa Kamaro, nibyiza guhura nawe. Uri mushyashya muri html no gukora imbuga za interneti ? ukeneye ugufasha?
-                <a href="{{Url()}}/lessons/intangiriro-ya-html">...</a></p>    </div>
-    </article>                        
+             <p>{{ $lesson->body }}
+                <a href="{{Url()}}/lessons/{{ $lesson->slug}}"> komeza isomo </a>
+            </p>    
+      </div>
+    </article>  
 
-   <article class="col-md-4 lesson-block lesson-block-series lesson-19 ">
-      <div class="full-center lesson-block-inner" style="background: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(//s3.amazonaws.com/laracasts/images/video-thumbnails/laravel-5-fundamentals-series-tn.jpg); background: -moz-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(//s3.amazonaws.com/laracasts/images/video-thumbnails/laravel-5-fundamentals-series-tn.jpg); background: linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(//s3.amazonaws.com/laracasts/images/video-thumbnails/laravel-5-fundamentals-series-tn.jpg); background-size: cover;">
-            
-            <div class="lesson-block-thumbnail">
-                <i class="fa fa-tag"></i>
-            </div>
-            <h5 class="lesson-block-difficulty">Biroroshye</h5>
-           
-            <h3 class="lesson-block-title  not-watched">
-                <a href="{{Url()}}/lessons/intangiriro-ya-html" title="Intangiriro ya html">
-                    Kode za Tags na Attributes
-                </a>                  
-            </h3>
-            <small class="lesson-block-length">
-                9:00       
-             </small>
-        </div>
-
-        <div class="lesson-block-meta">
-            <div class="lesson-date">
-                Jan. 5th 2015       
-             </div>   
-            <!-- This displays the favorited form and heart icon thing -->
-        </div>
-
-        <div class="lesson-block-excerpt">
-            <p>Uraho? Nitwa Kamaro, nibyiza guhura nawe. Uri mushyashya muri html no gukora imbuga za interneti ? ukeneye ugufasha?
-                <a href="{{Url()}}/lessons/intangiriro-ya-html">...</a></p>    </div>
-    </article>   
-
-       <article class="col-md-4 lesson-block lesson-block-series lesson-19 ">
-      <div class="full-center lesson-block-inner" style="background: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(//s3.amazonaws.com/laracasts/images/video-thumbnails/laravel-5-fundamentals-series-tn.jpg); background: -moz-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(//s3.amazonaws.com/laracasts/images/video-thumbnails/laravel-5-fundamentals-series-tn.jpg); background: linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(//s3.amazonaws.com/laracasts/images/video-thumbnails/laravel-5-fundamentals-series-tn.jpg); background-size: cover;">
-            
-            <div class="lesson-block-thumbnail">
-                <i class="fa fa-code"></i>
-            </div>
-            <h5 class="lesson-block-difficulty">Biroroshye</h5>
-           
-            <h3 class="lesson-block-title  not-watched">
-                <a href="{{Url()}}/lessons/intangiriro-ya-html" title="Intangiriro ya html">
-                    Ama lists n'imitwe y'amagambo    
-                </a>                  
-            </h3>
-            <small class="lesson-block-length">
-                9:00       
-             </small>
-        </div>
-
-        <div class="lesson-block-meta">
-            <div class="lesson-date">
-                Jan. 5th 2015       
-             </div>   
-            <!-- This displays the favorited form and heart icon thing -->
-        </div>
-
-        <div class="lesson-block-excerpt">
-            <p>Uraho? Nitwa Kamaro, nibyiza guhura nawe. Uri mushyashya muri html no gukora imbuga za interneti ? ukeneye ugufasha?
-                <a href="{{Url()}}/lessons/intangiriro-ya-html">...</a></p>    </div>
-    </article>                        
-                     
+ @endforeach
 
 </div>

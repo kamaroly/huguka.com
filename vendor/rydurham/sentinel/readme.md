@@ -80,8 +80,13 @@ Check the [Wiki](https://github.com/rydurham/Sentinel/wiki) for more information
 
 Any questions about this package should be posted [on the package website](http://www.ryandurham.com/projects/sentinel/).
 
+### Localization
+Sentinel has been translated into several other languages, and new translations are always welcome! Check out the [Sentinel Page](https://crowdin.com/project/sentinel) on CrowdIn for more details.
+
 ### Tests
 Tests are powered by Codeception.  Currently they must be run within a Laravel application environment.   To run the tests: 
 * Pull in the require-dev dependencies via composer. 
 * Navigate to the Sentinel folder
 * Run ```vendor/bin/codecept run```
+
+I would reccommend turning on "Mail Pretend" in your testing mail config file.

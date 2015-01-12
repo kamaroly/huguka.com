@@ -18,6 +18,12 @@ class CreateLessonsTable extends Migration {
 			$table->string('title');
 			$table->text('body');
 			$table->string('slug');
+			$table->string('length');
+			$table->text('video_script');
+			$table->string('icon');
+			$table->string('thumbnail');
+			$table->string('difficulity');
+
 			$table->timestamps();
 		});
 	}
