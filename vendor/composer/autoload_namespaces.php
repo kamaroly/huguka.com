@@ -41,4 +41,5 @@ return array(
     'Cartalyst\\Sentry' => array($vendorDir . '/cartalyst/sentry/src'),
     'Carbon' => array($vendorDir . '/nesbot/carbon/src'),
     'Boris' => array($vendorDir . '/d11wtq/boris/lib'),
+    'Atrakeur\\Forum\\' => array($vendorDir . '/atrakeur/forum/src'),
 );

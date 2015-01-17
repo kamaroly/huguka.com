@@ -20,38 +20,10 @@ Route::get('/',['as'	=>'home', function()
 
 Route::get('subs', function()
 {
-  $data   =   [ 'names'           => 'Kamaro Lambert',
-                'invoice_number'  => '49982309',
-                'date'            => date('d-M-Y'),
-                'item'            => 'Kwiyandishya ukwezi kumwe',
-                'price'           => 5000,
-                'paid'            => 5000
-               ];
-
-  return View::make('emails.activated',$data);
+  return View::make('sentinel::emails.reset',['resetCode' => 238923,'userId' => 9]);
 });
 
-Route::get('/mail', function()
-{
-  Mail::send('emails.subscribe', [], function($message)
-  	{
-  		$message->from('info@huguka.com')
-              ->to('kamaroly@gmail.com')
-              ->subject('subscription to Huguka');
-  	});
-  if( count(Mail::failures()) > 0 ) {
 
-   return  "There was one or more failures. They were: <br />";
-
-   foreach(Mail::failures as $email_address) 
-   {
-       return  " - $email_address <br />";
-    }
-
-} else {
-    return  "No errors, all sent successfully!";
-}
-});
 //Route
 Route::get('/search',function(){
 	return View::make('Search');
@@ -93,3 +65,9 @@ Route::group(['prefix'	=>	'tags'],function(){
 		return $tag->lessons;
 	});
 });
+
+///////////////////
+// Forum Routes  //
+///////////////////
+
+Route::get('forum', 'ForumController@getCategory');

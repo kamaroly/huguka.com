@@ -22,8 +22,15 @@ Home
 				@foreach ($users as $user)
 					<tr>
 						<td><a href="{{ action('Sentinel\UserController@show', array($user->id)) }}">{{ $user->email }}</a></td>
-						<td>{{ $user->status }} </td>
 						<td>
+						{{ $user->status }} 
+						</td>
+						<td>
+							  @if ($user->status == 'Not Active')
+								<button class="btn btn-default" type="button" onClick="location.href='{{ action('Sentinel\UserController@adminActivate', array($user->id)) }}'">Activate
+								</button> 
+							@endif
+							
 							<button class="btn btn-default" type="button" onClick="location.href='{{ action('Sentinel\UserController@edit', array($user->id)) }}'">Edit</button> 
 							@if ($user->status != 'Suspended')
 								<button class="btn btn-default" type="button" onClick="location.href='{{ route('Sentinel\suspendUserForm', array($user->id)) }}'">Suspend</button> 

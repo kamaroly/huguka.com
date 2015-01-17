@@ -7,69 +7,97 @@ use View, Input, Event, Redirect, Session, URL, Config;
 
 class SessionController extends BaseController {
 
-	/**
-	 * Member Vars
-	 */
-	protected $session;
-	protected $loginForm;
+    /**
+     * Member Vars
+     */
+    protected $session;
+    protected $loginForm;
 
-	/**
-	 * Constructor
-	 */
-	public function __construct(SessionInterface $session, LoginForm $loginForm)
-	{
-		$this->session = $session;
-		$this->loginForm = $loginForm;
-	}
+    /**
+     * Constructor
+     */
+    public function __construct(SessionInterface $session, LoginForm $loginForm)
+    {
 
-	/**
-	 * Show the login form
-	 */
-	public function create()
-	{
-		return View::make('Sentinel::sessions.login');
-	}
+        $this->session = $session;
+        $this->loginForm = $loginForm;
+    }
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		// Form Processing
+    /**
+     * Show the login form
+     */
+    public function create()
+    {
+        // Is this user already signed in?
+        if (\Sentry::check()) {
+            return Redirect::route(Config::get('Sentinel::config.post_login'));
+        }
+        
+        // Do we have a url to return to ? store it
+        if (Input::has('uvuye')) 
+        {
+            Session::put('return',Input::get('uvuye'));
+        }
+        // If not show the login page
+        return View::make('Sentinel::sessions.login');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        // Form Processing
         $result = $this->loginForm->save( Input::all() );
 
         if( $result['success'] )
         {
             Event::fire('sentinel.user.login', array(
-            	'user' => $result['user']
+                'user' => $result['user']
             ));
+            
+            if ($returnUrl = Session::get('return')) 
+            {
+             // Forget the session first then take user back 
+             Session::forget('return');
 
+             return Redirect::to($returnUrl);
+            }
             // Success!
-            $redirect_route = Config::get('Sentinel::config.post_login');
+            $redirect_route = Input::get('uvuye')?:Config::get('Sentinel::config.post_login');
             return Redirect::intended(route($redirect_route));
 
-        } else {
+        } else
+         {
             Session::flash('error', $result['message']);
+
+            if ($returnUrl=Session::get('return')) 
+            {
+             return Redirect::back()
+                               ->withInput()
+                               ->withErrors( $this->loginForm->errors() );
+            }
+
             return Redirect::route('Sentinel\login')
                 ->withInput()
                 ->withErrors( $this->loginForm->errors() );
         }
-	}
+    }
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy()
-	{
-		$this->session->destroy();
-		Event::fire('sentinel.user.logout');
-		$redirect_route = Config::get('Sentinel::config.post_logout');
-		return Redirect::route($redirect_route);
-	}
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy()
+    {
+        $this->session->destroy();
+        Event::fire('sentinel.user.logout');
+        $redirect_route = Config::get('Sentinel::config.post_logout');
+        return Redirect::route($redirect_route);
+    }
 
 }

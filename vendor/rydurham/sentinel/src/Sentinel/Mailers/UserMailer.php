@@ -31,18 +31,15 @@ class UserMailer extends Mailer {
 		$data['userId'] = $user->id;
 		$data['activationCode'] = $user->GetActivationCode();
 		$data['email'] = $user->email;
-		$data['username'] = $user->username;
-		$data['telephone'] = $user->telephone;
-        
-        return $this->sendTo( $user->email, $subject, $view, $data );
-		// if ($activated)
-		// {
-		// 	return null;
-		// }
-		// else 
-		// {
-		// 	return $this->sendTo( $user->email, $subject, $view, $data );
-		// }
+
+		if ($activated)
+		{
+			return null;
+		}
+		else 
+		{
+			return $this->sendTo( $user->email, $subject, $view, $data );
+		}
 		
 	}
 

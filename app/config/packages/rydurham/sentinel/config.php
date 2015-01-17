@@ -85,8 +85,10 @@ return array(
     |
     */
 
-    'welcome'           => 'Urakaza neza kuri huguka',
-
+    'welcome'           => 'Urakaza neza kuri huguka', 
+    
+    'paid_accepted'     => 'Murakoze kwiyandikisha ',
+    
     'reset_password'    => 'Emeza guhindura ijambo banga',
 
     'new_password'      => 'Amakuru y\' ijambo banga',

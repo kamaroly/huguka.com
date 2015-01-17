@@ -9,7 +9,8 @@
 		"laracasts/flash": "~1.0",
 		"way/generators": "~2.0",
 		"rydurham/sentinel": "~1.4",
-		"guzzlehttp/guzzle": "4.*"
+		"guzzlehttp/guzzle": "4.*",
+		"atrakeur/forum": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
@@ -17,9 +18,7 @@
 			"app/controllers",
 			"app/models",
 			"app/database/migrations",
-			"app/database/seeds",
-			"app/tests/TestCase.php"
-		]
+			"app/database/seeds"		]
 	},
 	"scripts": {
 		"post-install-cmd": [

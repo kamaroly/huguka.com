@@ -127,6 +127,7 @@ return array(
 		/////////////////////////////////////
 		'Sentinel\SentinelServiceProvider', 
 		'Way\Generators\GeneratorsServiceProvider',
+		'Atrakeur\Forum\ForumServiceProvider',
 	),
 
 	/*

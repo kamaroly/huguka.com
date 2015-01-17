@@ -58,7 +58,7 @@
         <li {{ (Request::is('users/show/' . Session::get('userId')) ? 'class="active"' : '') }}><a href="{{ URL::route('users.show', Session::get('userId')) }}">{{ Session::get('email') }}</a></li>
         <li><a href="{{ URL::route('Sentinel\logout') }}">Logout</a></li>
         @else
-        <li {{ (Request::is('login') ? 'class="active"' : '') }}><a href="{{ URL::route('Sentinel\login') }}">Injira</a></li>
+        <li {{ (Request::is('login') ? 'class="active"' : '') }}><a href="{{Url()}}/login?uvuye={{ URL::current()}}">Injira</a></li>
         <li {{ (Request::is('users/create') ? 'class="active"' : '') }} ><a href="{{ URL::route('Sentinel\register') }}" class="btn btn-finish btn-fill btn-warning btn-wd btn-sm">Iyandikishe</a></li>
         @endif
     </ul>
