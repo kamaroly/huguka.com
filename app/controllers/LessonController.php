@@ -28,6 +28,9 @@ class LessonController extends BaseController
         // Get the lesson with same tags
     	$tagids = Tag::tagIds($lesson->tags);
         
+        $lesson_id_array = [];
+        if(count($tagids) > 0)
+        {
         // Get the ids of the lessons
         $lesson_ids = DB::table('lesson_tag')
     	                       ->select('lesson_id as id')
@@ -37,7 +40,8 @@ class LessonController extends BaseController
 
         // Get ids of the related lesson
         $lesson_id_array = Tag::tagids($lesson_ids);
-        
+        }
+
         $related = [];
         if (count($lesson_id_array)>0)
         { 	

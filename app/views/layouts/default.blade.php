@@ -7,12 +7,12 @@
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
   <meta name="viewport" content="width=device-width" />
+      <!-- Custom styles for this template -->
+
+  <link href="{{Url()}}/css/bootstrap.min.css" rel="stylesheet" />
   <link href="{{ Url() }}/css/jquery-ui.css" rel="stylesheet">
-  <link href="{{ Url()}}/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="{{ Url()}}/css/huguka.com.css" rel="stylesheet" />  
   <link href="{{ Url()}}/css/font-awesome.css" rel="stylesheet">
-  <script src="{{Url()}}/js/jquery-1.10.2.js" type="text/javascript"></script>
-  <script src="{{Url()}}/js/jquery-ui.js"></script>
 
 </head>
 
@@ -52,10 +52,15 @@
     
 </body>
 
-	<script src="{{Url()}}/js/bootstrap.min.js" type="text/javascript"></script>
-		
-	<!--   plugins 	 -->
-	<script src="{{Url()}}/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
-	<script src="{{Url()}}/js/wizard.js"></script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{Url()}}/js/jquery.min.js"></script>
+    <script src="{{Url()}}/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{{Url()}}/js/ie10-viewport-bug-workaround.js"></script>
+        <!--   plugins   -->
+  <script src="{{Url()}}/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+  <script src="{{Url()}}/js/wizard.js"></script>
 	
 </html>

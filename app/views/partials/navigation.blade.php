@@ -11,29 +11,21 @@
 -->
 
       </div>
-    <div class="navbar-header">
-    
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" style="color:#fff">
-      <span class="fa fa-bars"></span>
-    </button>
-    <ul class="nav navbar-nav navbar-left"> 
-     <li >
-        <a href="/" style="color:#ff9500;font-weight:900;font-size:24px;">
+
+<nav class="navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+             <span class="fa fa-bars"></span>
+          </button>
+           <a class="navbar-brand logo" href="/">
             <i class="fa fa-h-square"></i>
             huguka
         </a>
-      </li>
-</ul>
-  </div>
-
-
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav">
-      
-    </ul>
-
-     
-    <ul class="nav navbar-nav navbar-left"> 
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+             <ul class="nav navbar-nav navbar-left"> 
      <li>
         <a href="{{Url()}}/lessons">
             <i class="fa fa-book"></i>
@@ -62,6 +54,16 @@
         <li {{ (Request::is('users/create') ? 'class="active"' : '') }} ><a href="{{ URL::route('Sentinel\register') }}" class="btn btn-finish btn-fill btn-warning btn-wd btn-sm">Iyandikishe</a></li>
         @endif
     </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      
+    </ul>
+
+     
+
     
   </div>
 </div>
