@@ -1,15 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
 
 Route::get('/',['as'	=>'home', function()
 {   
@@ -38,17 +28,10 @@ Route::get('search/autocomplete', 'SearchController@searchUser');
 Route::group(['prefix'	=>	'lessons'],function(){
 
     // Get all lessons
-    Route::get('/',function(){
-
-    	$lesson 	= Lesson::find(1);
-    	return $lesson->tags;
-    });
+    Route::get('/','LessonController@index');
 
 	// Show a lesson
-	Route::get('/{lesson_slug}',function($lesson_slug){
-		// return $lesson_slug;
-		return View::make('lessons.watch');
-	});
+	Route::get('/{lesson_slug}','LessonController@show');
 
 });
 
@@ -59,15 +42,13 @@ Route::group(['prefix'	=>	'lessons'],function(){
 Route::group(['prefix'	=>	'tags'],function(){
 
 	//Get all tags
-	Route::get('/',function(){
-
-		$tag 	= 	Tag::find(2);
-		return $tag->lessons;
-	});
+	Route::get('/','LessonController@tags');
+	
+	Route::get('/{tag}','LessonController@tag');
 });
 
 ///////////////////
 // Forum Routes  //
 ///////////////////
 
-Route::get('forum', 'ForumController@getCategory');
+Route::resource('forum', 'ForumController');

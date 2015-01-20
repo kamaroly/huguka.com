@@ -48,6 +48,8 @@
 
 @include('partials.footer')
 
+
+    
 </body>
 
 	<script src="{{Url()}}/js/bootstrap.min.js" type="text/javascript"></script>

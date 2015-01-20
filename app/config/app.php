@@ -128,6 +128,7 @@ return array(
 		'Sentinel\SentinelServiceProvider', 
 		'Way\Generators\GeneratorsServiceProvider',
 		'Atrakeur\Forum\ForumServiceProvider',
+		'Rtablada\WardrobeDisqus\WardrobeDisqusServiceProvider',
 	),
 
 	/*
@@ -194,6 +195,11 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
+
+		 /////////////////////////
+		 // customer facades  //
+		 /////////////////////////
+		'Disqus'			=> 'Rtablada\WardrobeDisqus\Facades\Disqus',
 
 	),
 

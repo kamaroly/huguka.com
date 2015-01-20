@@ -1,0 +1,30 @@
+{
+    "name": "rtablada/wardrobe-disqus",
+    "description": "Fast, simple Disqus integration for Laravel",
+    "keywords": [
+        "laravel",
+        "wardrobe",
+        "comments"
+    ],
+    "authors": [
+        {
+            "name": "Ryan Tablada",
+            "email": "ryan.tablada@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "~4",
+        "illuminate/config": "~4"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.8.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Rtablada\\WardrobeDisqus": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "license": "MIT"
+}

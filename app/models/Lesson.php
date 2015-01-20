@@ -6,4 +6,9 @@ class Lesson extends \Eloquent {
 	{
 		return $this->belongsToMany('Tag');
 	}
+  
+   public function scopeSlug($query, $slug)
+   {
+   	  return $query->where('slug','=',$slug);
+   }
 }

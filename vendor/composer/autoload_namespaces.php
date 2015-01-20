@@ -25,6 +25,7 @@ return array(
     'Symfony\\Component\\BrowserKit\\' => array($vendorDir . '/symfony/browser-kit'),
     'Stack' => array($vendorDir . '/stack/builder/src'),
     'Sentinel' => array($vendorDir . '/rydurham/sentinel/src'),
+    'Rtablada\\WardrobeDisqus' => array($vendorDir . '/rtablada/wardrobe-disqus/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'Predis' => array($vendorDir . '/predis/predis/lib'),
     'Patchwork' => array($vendorDir . '/patchwork/utf8/class'),

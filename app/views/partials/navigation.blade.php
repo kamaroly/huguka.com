@@ -35,13 +35,13 @@
      
     <ul class="nav navbar-nav navbar-left"> 
      <li>
-        <a href="javascript:void(0)" onclick="showSearchForm(this)">
+        <a href="{{Url()}}/lessons">
             <i class="fa fa-book"></i>
             Amasomo
         </a>
       </li>
       <li>
-        <a href="javascript:void(0)" onclick="showSearchForm(this)">
+        <a href="{{Url()}}/tags" >
             <i class="fa fa-tags"></i>
             Ibyiciro
         </a>

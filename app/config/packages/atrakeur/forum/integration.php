@@ -25,7 +25,7 @@ return array(
 		//Here you can use confide facade,
 		//or just the default facade, or whatever else
 
-		return Auth::user();
+		return Sentry::user();
 	},
 
 	/*

@@ -1,4 +1,12 @@
-<h2 class="section-heading">Amasomo asobanutse ya mudasobwa , atunganywa buri munsi.</h2>
+@extends(Config::get('Sentinel::config.layout'))
+{{-- Web site Title --}}
+@section('title')
+@parent
+Amasomo 
+@stop
+@section('content')
+<div class="row">
+
 <span class="section-heading-divider"></span>
 
 <div class="row lesson-set lessons__row">
@@ -27,7 +35,7 @@
 
         <div class="lesson-block-meta">
              <div class="lesson-date">
-                {{ date('d-M-Y',strtotime($lesson->updated_at))}}   
+                {{ date('d-M-Y',strtotime($lesson->updated_at))}}      
              </div>   
         </div>
 
@@ -40,4 +48,6 @@
 
  @endforeach
 
+</div>
+@stop 
 </div>

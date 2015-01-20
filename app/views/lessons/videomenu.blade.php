@@ -1,5 +1,6 @@
-<div class="col-md-3 videomenu">
-    <ul class="nav" >
+<div class="col-md-3 ">
+  <div class="videomenu">
+        <ul class="nav" >
                    
                  
                     <li>
@@ -16,7 +17,7 @@
                          </a>
                     </li>
                     <li class="landing_link">
-                        <a target="_blank" href="#">
+                        <a target="_blank" href="{{ $lesson->video_script}}">
                             <i class="fa fa-download"></i>
                              <span class="nav-label">Download</span>
                          </a>
@@ -29,7 +30,7 @@
                             <span class="label label-info pull-right">10</span></a>
                          </a>
                     </li>
-                </ul>            
-
-</div>
+                </ul>    
+  </div>        
 @include('lessons.videotags')    
+</div>

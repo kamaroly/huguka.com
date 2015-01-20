@@ -18,13 +18,14 @@ Amasomo asobanutse ajyanye n'igihe.
             <a href="/collections/solid-principles" style="opacity: 1;">HTML</a>
         </h1>
 
-        <a href="/register" class="btn btn-join">
+        <a href="{{ (! Sentry::check()) ? '/register' : '/lessons'}}" class="btn btn-join">
             Tangira kwiga .
         </a>
-
-                    <footer>
+        @if( !Sentry::check())
+            <footer>
                 <a href="/login">Usanzwe ufite konti hano ? Injira.</a>
             </footer>
+        @endif
 </div>
 @stop
 

@@ -17,7 +17,7 @@ class AbstractViewForumController extends AbstractForumController {
 		$this->messages   = $messages;
 	}
 
-	public function getIndex()
+	public function index()
 	{
 		$categories = $this->categories->getByParent(null, array('subcategories'));
 
