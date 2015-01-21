@@ -31,6 +31,8 @@ class UserMailer extends Mailer {
 		$data['userId'] = $user->id;
 		$data['activationCode'] = $user->GetActivationCode();
 		$data['email'] = $user->email;
+		$data['username'] = $user->username;
+		$data['telephone'] = $user->telephone;
 
 		if ($activated)
 		{

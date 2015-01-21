@@ -8,7 +8,7 @@ return array(
 	|--------------------------------------------------------------------------
 	*/
 
-	'created' 		=>  "Your account has been created. Check your email for the confirmation link.",	
+	'created' 		=>  "Tumaze gukora conte yanyu. tuboherereje email ibamenyesha ibindi bikurikira.",	
 
 	'createdactive' =>  "Your account has been created. You can now login.",
 
@@ -16,13 +16,13 @@ return array(
 
 	'addedactive'	=>  "New user added.",
 
-	'loginreq' 		=>	"Login field required.",
+	'loginreq' 		=>	"Kwinjira ntago byemeye.",
 
-	'exists'		=>	"User already exists.",
+	'exists'		=>	"ino Konte dusanzwe tuyifite.",
 
-	'notfound'		=>	"User not found",
+	'notfound'		=>	"Ntago tubashije kubona ino konte",
 
-	'noaccess'		=>	"You are not allowed to do that.",
+	'noaccess'		=>	"Ibyo wemerewe gukora ibyongibyo.",
 
 	'updated'		=>	"Profile updated",
 
