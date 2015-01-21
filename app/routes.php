@@ -1,5 +1,8 @@
 <?php
-
+Route::get('/test',function()
+	{
+		return dd(new Sentry);
+	});
 
 Route::get('/',['as'	=>'home', function()
 {   
@@ -46,9 +49,3 @@ Route::group(['prefix'	=>	'tags'],function(){
 	
 	Route::get('/{tag}','LessonController@tag');
 });
-
-///////////////////
-// Forum Routes  //
-///////////////////
-
-Route::resource('forum', 'ForumController');

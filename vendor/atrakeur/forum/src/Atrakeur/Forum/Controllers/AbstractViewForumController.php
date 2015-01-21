@@ -17,11 +17,11 @@ class AbstractViewForumController extends AbstractForumController {
 		$this->messages   = $messages;
 	}
 
-	public function index()
+	public function getIndex()
 	{
-		$categories = $this->categories->getByParent(null, array('subcategories'));
+	    $categories = $this->categories->getByParent(null, array('subcategories'));
 
-		$this->layout->content = \View::make('forum::index', compact('categories'));
+	   return $this->layout->content = \View::make('forum::index', compact('categories'));
 	}
 
 	public function getCategory($categoryId, $categoryUrl)
@@ -36,7 +36,7 @@ class AbstractViewForumController extends AbstractForumController {
 		$subCategories  = $category->subCategories;
 		$topics         = $category->topics;
 
-		$this->layout->content = \View::make('forum::category', compact('parentCategory', 'category', 'subCategories', 'topics'));
+	return	$this->layout->content = \View::make('forum::category', compact('parentCategory', 'category', 'subCategories', 'topics'));
 
 	}
 
@@ -60,7 +60,7 @@ class AbstractViewForumController extends AbstractForumController {
 		$messages        = $this->messages->getByTopic($topic->id, array('author'));
 		$paginationLinks = $this->messages->getPaginationLinks($messagesPerPage);
 
-		$this->layout->content = \View::make('forum::topic', compact('parentCategory', 'category', 'topic', 'messages', 'paginationLinks'));
+		return $this->layout->content = \View::make('forum::topic', compact('parentCategory', 'category', 'topic', 'messages', 'paginationLinks'));
 	}
 
 }

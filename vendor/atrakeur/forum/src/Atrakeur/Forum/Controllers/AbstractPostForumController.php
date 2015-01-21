@@ -27,7 +27,8 @@ abstract class AbstractPostForumController extends AbstractForumController {
 
 	public function getNewTopic($categoryId, $categoryUrl)
 	{
-		$user = $this->getCurrentUser();
+	    $user = $this->getCurrentUser();
+		
 		if ($user == NULL)
 		{
 			return \App::abort(403, 'Access denied');
@@ -37,7 +38,7 @@ abstract class AbstractPostForumController extends AbstractForumController {
 		$parentCategory = $category->parentCategory;
 		$actionUrl      = $category->postUrl;
 
-		$this->layout->content = \View::make('forum::post', compact('parentCategory', 'category', 'actionUrl'));
+		return $this->layout->content = \View::make('forum::post', compact('parentCategory', 'category', 'actionUrl'));
 	}
 
 	public function postNewTopic($categoryId, $categoryUrl)

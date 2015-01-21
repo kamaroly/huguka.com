@@ -39,7 +39,7 @@
         </a>
       </li>
       <li>
-        <a href="javascript:void(0)" onclick="showSearchForm(this)">
+        <a href="/forum">
             <i class="fa fa-wechat"></i>
             Ungurana ibitekerezo
         </a>

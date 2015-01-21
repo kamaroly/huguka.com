@@ -10,7 +10,7 @@ return array(
 	| The user model from the main application
 	|
 	*/
-	'usermodel' => '\User',
+	'usermodel' => 'Cartalyst\Sentry\Users\Eloquent\User',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -25,7 +25,7 @@ return array(
 		//Here you can use confide facade,
 		//or just the default facade, or whatever else
 
-		return Sentry::user();
+		return Sentry::getUser();
 	},
 
 	/*
