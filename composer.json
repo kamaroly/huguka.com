@@ -11,7 +11,8 @@
 		"rydurham/sentinel": "~1.4",
 		"guzzlehttp/guzzle": "4.*",
 		"atrakeur/forum": "dev-master",
-		"rtablada/wardrobe-disqus": "dev-master"
+		"rtablada/wardrobe-disqus": "dev-master",
+		"wardrobe/core": "1.*"
 	},
 	"autoload": {
 		"classmap": [

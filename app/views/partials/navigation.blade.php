@@ -38,10 +38,16 @@
             Ibyiciro
         </a>
       </li>
+       <li>
+        <a href="/blog">
+            <i class="fa fa-file"></i>
+            Inyandiko
+        </a>
+      </li>
       <li>
         <a href="/forum">
             <i class="fa fa-wechat"></i>
-            Ungurana ibitekerezo
+            Ibiganiro
         </a>
       </li>
     </ul>

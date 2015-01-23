@@ -56,7 +56,7 @@ return array(
 		if ($user != NULL)
 		{
 			//Here we allow only user to edit their own messages
-			if ($user->id == $message->author)
+			if ($user->id == $message->author->id)
 			{
 				return true;
 			}

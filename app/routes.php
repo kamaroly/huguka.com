@@ -1,7 +1,20 @@
 <?php
 Route::get('/test',function()
 	{
-		return dd(new Sentry);
+		
+		$posts = Post::all();'<p>Test paragraph.</p><!-- Comment --> <a href="#fragment">Other text</a>';
+		foreach ($posts as $post)
+	    {
+	      if ($post->id != 112) {
+	      	continue;
+	      }
+	      preg_match('/[p] \\".*?"/',$post->content , $content);
+           
+          $post->content = str_replace($content, 'p', $post->content);
+
+		  $post->save();
+		}
+        //return  $posts;//output Test paragraph. Other text
 	});
 
 Route::get('/',['as'	=>'home', function()
@@ -49,3 +62,6 @@ Route::group(['prefix'	=>	'tags'],function(){
 	
 	Route::get('/{tag}','LessonController@tag');
 });
+
+
+
