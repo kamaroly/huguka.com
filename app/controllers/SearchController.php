@@ -22,4 +22,4 @@
 	return Response::json($results);
 	}
 
-	 }
+}

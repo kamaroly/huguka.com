@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddRememberTokenToUserTable' => $baseDir . '/app/database/migrations/2015_01_24_183630_add_remember_token_to_userTable.php',
     'Atrakeur\\Forum\\Commands\\InstallCommand' => $vendorDir . '/atrakeur/forum/src/Atrakeur/Forum/Commands/InstallCommand.php',
     'Atrakeur\\Forum\\Controllers\\AbstractForumController' => $vendorDir . '/atrakeur/forum/src/Atrakeur/Forum/Controllers/AbstractForumController.php',
     'Atrakeur\\Forum\\Controllers\\AbstractForumControllerTest' => $vendorDir . '/atrakeur/forum/tests/Controllers/AbstractForumControllerTest.php',

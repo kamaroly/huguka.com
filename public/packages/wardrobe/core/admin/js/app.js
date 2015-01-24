@@ -93,11 +93,19 @@ __p += '<form class="form-horizontal center">\n  <div id="js-errors" class="hide
 return __p
 };
 
+////////////////////////////////////
+// MAIN MENU FOR THE APPLICATION  //
+////////////////////////////////////
+
 this["JST"]["header/list/templates/header.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<nav>\n  <ul>\n    <li><a class="write" href="#"><i class="icon-plus"></i> ' +
+__p += '<nav>\n  <ul>\n    <li><a class="users" href="/admin/membership"><i class="icon-money"></i> ' +
+((__t = ( Lang.membership )) == null ? '' : __t) +
+'</a></li>\n    <li><a class="lessons" href="/admin/lessons"><i class="icon-book"></i> ' +
+((__t = ( Lang.lessons )) == null ? '' : __t) +
+'</a></li>\n    <li><a class="write" href="#"><i class="icon-plus"></i> ' +
 ((__t = ( Lang.write )) == null ? '' : __t) +
 '</a></li>\n    <li><a class="posts" href="#post"><i class="icon-list"></i> ' +
 ((__t = ( Lang.posts )) == null ? '' : __t) +
@@ -112,6 +120,11 @@ __p += '<nav>\n  <ul>\n    <li><a class="write" href="#"><i class="icon-plus"></
 }
 return __p
 };
+
+//////////////////////////////////////
+// END OF THE MAIN MENU AT THE TOP  //
+//////////////////////////////////////
+
 
 this["JST"]["post/_base/templates/form.html"] = function(obj) {
 obj || (obj = {});

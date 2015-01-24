@@ -5,6 +5,8 @@ return array(
   'write' => 'Write',
   'posts' => 'Posts',
   'accounts' => 'Accounts',
+  'lessons'  => 'Lessons',
+  'membership'  => 'Membership',
   'logout' => 'Logout',
   'login' => 'Login',
 

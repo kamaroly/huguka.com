@@ -17,6 +17,7 @@
 				api_url: "{{ route('wardrobe.api.index') }}",
 				admin_url: "{{ route('wardrobe.admin.index') }}",
 				blog_url: "{{ route('wardrobe.index') }}",
+				lesson_url: "{{ route('admin.lessons.index')}} ",
 			});
 		});
 		window.Lang = {@foreach($locale as $key => $item) {{ $key }}: "{{ $item }}", @endforeach}

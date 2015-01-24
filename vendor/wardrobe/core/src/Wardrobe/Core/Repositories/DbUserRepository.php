@@ -45,7 +45,7 @@ class DbUserRepository implements UserRepositoryInterface {
 	{
 		$password = Hash::make($password);
 
-		return User::create(compact('first_name', 'last_name', 'email', 'password', 'active'));
+		return User::create(compact('first_name', 'last_name', 'email', 'password', 'activated'));
 	}
 
 	/**
@@ -73,7 +73,7 @@ class DbUserRepository implements UserRepositoryInterface {
 			unset($password);
 		}
 
-		$user->fill(compact('first_name', 'last_name', 'email', 'password', 'active'))->save();
+		$user->fill(compact('first_name', 'last_name', 'email', 'password', 'activated'))->save();
 
 		return $user;
 	}
@@ -125,7 +125,7 @@ class DbUserRepository implements UserRepositoryInterface {
 			'last_name'  => 'required|max:255',
 			'email'      => 'required|email|unique:users,email',
 		);
-
+        
 		if ($id)
 		{
 			$rules['email']    .= ','.$id;

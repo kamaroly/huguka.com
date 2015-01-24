@@ -1,22 +1,4 @@
 <?php
-Route::get('/test',function()
-	{
-		
-		$posts = Post::all();'<p>Test paragraph.</p><!-- Comment --> <a href="#fragment">Other text</a>';
-		foreach ($posts as $post)
-	    {
-	      if ($post->id != 112) {
-	      	continue;
-	      }
-	      preg_match('/[p] \\".*?"/',$post->content , $content);
-           
-          $post->content = str_replace($content, 'p', $post->content);
-
-		  $post->save();
-		}
-        //return  $posts;//output Test paragraph. Other text
-	});
-
 Route::get('/',['as'	=>'home', function()
 {   
 	$lessons 	= Lesson::take(9)->get();
@@ -63,5 +45,20 @@ Route::group(['prefix'	=>	'tags'],function(){
 	Route::get('/{tag}','LessonController@tag');
 });
 
+//////////////////////////
+// administrator routes //
+//////////////////////////
+
+Route::group(['prefix'	=> 'admin' ,'before' => 'wardrobe.auth' ],function()
+	{
+		Route::group(['prefix' => 'lessons'], function()
+			{
+				Route::get('/', ['as'   => 'admin.lessons.index','uses' => 'LessonController@adminIndex']);
+				Route::get('add', ['as' => 'admin.lessons.add','uses'   => 'LessonController@create']);
+				Route::post('save',['as' => 'admin.lessons.save','uses'=> 'LessonController@store']);
+				Route::post('save/{id}',['as' => 'admin.lessons.save','uses'=> 'LessonController@update']);
+				Route::get('/{id}',['as' => 'admin.lessons.edit','uses'=> 'LessonController@edit']);
+			});
+	});
 
 

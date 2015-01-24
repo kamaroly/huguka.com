@@ -12,7 +12,7 @@ return array(
 	),
 
 	'api_group_rules' => array(
-		// 'prefix' => 'api',
+		'prefix' => 'api',
 		// 'domain' => 'blog.site.com'
 	),
 );

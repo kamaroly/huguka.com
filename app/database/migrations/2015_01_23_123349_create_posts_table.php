@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration {
 			$table->string('image')->default('');
 			$table->string('type')->default('post');
 			$table->timestamp('publish_date');
+			$table->integer('user_id');
 			$table->tinyInteger('active')->default(0);
 			$table->integer('hits');
 			$table->timestamps();
